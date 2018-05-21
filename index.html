@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A simple API call</title>
+
+		<script type="text/javascript" src="./main.js"></script>
+		<link rel="stylesheet" type="text/css" href="./home.css">
+
+	</head>
+	<body>
+
+		<div class="container">
+		
+			<div class="formWrapper">
+				<h4 class="pageTitle">Discover People</h4>
+
+				<form name="" method="POST" autocomplete="off">
+					<label for="inpTxt"></label>
+					<input class="inpSearchText" id="inpTxt" type="text" value="" name="" placeholder="Enter Search Term" onkeyup="main.search(event)">
+				</form>
+
+				<!-- tplHtmlResults will be rendered here -->
+				<ul class="divRenderTemplate" id="tplHtmlResults">
+
+				</ul>
+				<div id="no-result">
+					no result found
+				</div>
+			</div>
+		</div>		
+
+		<!-- Templates for dynamic DOM rendering -->
+		<script type="text/template" template-id="tplHtmlResults" id="HtmlResults">
+			<li class="divUserData" id="{{ id }}" onclick="main.selectClickedUser('{{ id }}')"> 
+				{{ name }} {{ last }} from {{ city }}
+			</li>
+		</script>
+
+	</body>
+</html>
